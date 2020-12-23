@@ -2,7 +2,7 @@ import os
 import csv
 
 # Path to collect data from the Resources folder
-budget_csv = os.path.join('Resources', 'budget_data.csv') 
+budget_csv = os.path.join('..','Resources', 'budget_data.csv') 
 
 with open(budget_csv) as csvfile:
 
@@ -19,6 +19,12 @@ with open(budget_csv) as csvfile:
     for row in csvreader:
         print(row)
 
+totalMonths = len(Date)
 
+totalProfitLoss = sum(Profit/Losses)
 
-    # total_months = len(date)
+averageChange = round(totalProfitLoss/totalMonths, ndigits=2)
+
+maxIncrease = max(totalProfitLoss)
+
+maxDecrease = min(totalProfitLoss)
